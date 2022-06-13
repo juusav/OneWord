@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getWordInfo } from "../data/api";
 
 function HomeScreen() {
-  const [word, setWord] = useState({
+  const [searchWord, setWord] = useState({
     data: [],
-    searchTerm: "",
+    term: "",
+    error: "",
   });
 
   const fetchData = async () => {
@@ -22,25 +23,30 @@ function HomeScreen() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await getWordInfo(word.searchTerm);
+    const response = await getWordInfo(searchWord.term);
+    if (searchWord.term === "") {
+      return setWord({ ...searchWord, error: "Please write a valid text" });
+    }
+
     return setWord({
       data: response,
-      searchTerm: "",
+      term: "",
+      error: "",
     });
   };
-  const { data } = word;
+  const { data } = searchWord;
 
-  console.log(data)
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search"
-        value={word.searchTerm}
-        onChange={(e) => setWord({ ...word, searchTerm: e.target.value })}
+        value={searchWord.term}
+        onChange={(e) => setWord({ ...searchWord, term: e.target.value })}
         autoFocus
       />
-      <h1>{data.word}</h1>
+      <p>{searchWord.error ? searchWord.error : ""}</p>
+      <h1>{data.word ? data.word : ""}</h1>
     </form>
   );
 }
