@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getWordInfo } from "../data/api";
+import "./styles.css";
 
 function HomeScreen() {
   const [searchWord, setWord] = useState({
-    data: [],
+    data: "",
     term: "",
     error: "",
   });
@@ -38,15 +39,17 @@ function HomeScreen() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>OneWord</h1>
       <input
         type="text"
         placeholder="Search"
+        className="inputText"
         value={searchWord.term}
         onChange={(e) => setWord({ ...searchWord, term: e.target.value })}
         autoFocus
       />
       <p>{searchWord.error ? searchWord.error : ""}</p>
-      <h1>{data.word ? data.word : ""}</h1>
+      <h2>{data.word ? data.word : ""}</h2>
     </form>
   );
 }
