@@ -13,10 +13,6 @@ function HomeScreen() {
     error: "",
   });
 
-  if (searchWord.data.phonetics !== undefined) {
-    console.log(searchWord.data.phonetics[0][0].audio);
-  }
-
   const fetchData = async () => {
     const fetchedData = await getWordInfo("word");
     if (fetchedData) {
@@ -45,6 +41,9 @@ function HomeScreen() {
     });
   };
 
+  if (searchWord.data.phonetics[0][0].audio !== undefined) {
+    console.log(searchWord.data.phonetics[0][0].audio);
+  }
   const { data } = searchWord;
 
   return (
