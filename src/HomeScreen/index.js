@@ -39,9 +39,6 @@ function HomeScreen() {
   };
 
   const { data } = searchWord;
-  if(data === undefined){
-
-  }
 
   return (
     <div>
@@ -51,7 +48,7 @@ function HomeScreen() {
           type="text"
           placeholder="Search"
           className="inputText"
-          value={searchWord.term}
+          value={searchWord.term || ""}
           onChange={(e) => setWord({ ...searchWord, term: e.target.value })}
           autoFocus
         />
