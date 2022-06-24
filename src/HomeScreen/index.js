@@ -5,16 +5,13 @@ import "./styles.css";
 
 function HomeScreen() {
   const [searchWord, setWord] = useState({
-    data: {
-      word: "words",
-      phonetics: [{ 0: { audio: "-hola--.mp3" } }, { 1: { audio: "---.mp3" } }],
-    },
+    data: "",
     term: "",
     error: "",
   });
 
   const fetchData = async () => {
-    const fetchedData = await getWordInfo("word");
+    const fetchedData = await getWordInfo();
     if (fetchedData) {
       setWord({
         data: fetchData,
@@ -41,10 +38,10 @@ function HomeScreen() {
     });
   };
 
-  if (searchWord.data.phonetics[0][0].audio !== undefined) {
-    console.log(searchWord.data.phonetics[0][0].audio);
-  }
   const { data } = searchWord;
+  if(data === undefined){
+
+  }
 
   return (
     <div>
@@ -60,7 +57,7 @@ function HomeScreen() {
         />
       </form>
       <p>{searchWord.error ? searchWord.error : ""}</p>
-      {searchWord ? (
+      {data ? (
         <>
           <h2>{data.word ? data.word : ""}</h2>
           {/* <PlayMp3 audio={data.phonetics} /> */}
