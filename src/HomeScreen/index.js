@@ -9,7 +9,6 @@ function HomeScreen() {
     term: "",
     error: "",
   });
-
   const fetchData = async () => {
     const fetchedData = await getWordInfo();
     if (fetchedData) {
@@ -53,11 +52,19 @@ function HomeScreen() {
           autoFocus
         />
       </form>
+
       <p>{searchWord.error ? searchWord.error : ""}</p>
+      <div>
+        {searchWord.data.phonetics
+          ? searchWord.data?.phonetics.map((item) => <p>{item?.audio}</p>)
+          : ""}
+      </div>
       {data ? (
         <>
           <h2>{data.word ? data.word : ""}</h2>
+
           {/* <PlayMp3 audio={data.phonetics} /> */}
+          {/* <p>{data.phonetics[0][0].audio || ""}</p> */}
         </>
       ) : (
         ""
