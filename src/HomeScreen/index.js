@@ -17,7 +17,7 @@ function HomeScreen() {
       });
     }
   };
-
+ 
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,7 +56,7 @@ function HomeScreen() {
       <p>{searchWord.error ? searchWord.error : ""}</p>
       <div>
         {searchWord.data.phonetics
-          ? searchWord.data?.phonetics.map((item) => <p>{item?.audio}</p>)
+          ? <p>{searchWord.data?.phonetics[0].audio}</p>
           : ""}
       </div>
       {data ? (
