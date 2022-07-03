@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import PlayMp3 from "../components/PlayMp3";
+import PlayMp3 from "../components/PlayMp3";
 import { getWordInfo } from "../data/api";
 import "./styles.css";
 
@@ -56,15 +56,12 @@ function HomeScreen() {
       <p>{searchWord.error ? searchWord.error : ""}</p>
       <div>
         {searchWord.data.phonetics
-          ? <p>{searchWord.data?.phonetics[0].audio}</p>
+          ? <PlayMp3 audio={searchWord.data?.phonetics[0].audio} />
           : ""}
       </div>
       {data ? (
         <>
           <h2>{data.word ? data.word : ""}</h2>
-
-          {/* <PlayMp3 audio={data.phonetics} /> */}
-          {/* <p>{data.phonetics[0][0].audio || ""}</p> */}
         </>
       ) : (
         ""

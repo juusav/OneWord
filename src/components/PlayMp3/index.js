@@ -1,23 +1,14 @@
 import React from "react";
 
 function PlayMp3(props) {
-  function play(audio) {
-    let audioID = document.getElementById("audioID");
+  const playAudio = () => {
+    const getAudio = new Audio(props.audio);
+    return getAudio.play();
+  };
 
-    if (!audioID || audioID !== audio) audioID = audio;
-
-    if (audioID === true) {
-      console.log("pause");
-      audioID.pause();
-    } else {
-      console.log("play");
-      audioID.play();
-    }
-  }
   return (
     <div>
-      <p onClick={play(props.audio)}>playMp3</p>
-      <audio id="audioID"></audio>
+      <button onClick={playAudio()}>playMp3</button>
     </div>
   );
 }
