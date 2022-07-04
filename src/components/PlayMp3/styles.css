@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px 30px;
+
+  background: rgb(69, 67, 67);
+  color: aliceblue;
+  border-radius: 10px;
+  font-size:large;
+}
+.word {
+  color: white;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+.word::first-letter {
+  text-transform: uppercase;
+}
+.pronounce::first-letter {
+  color: white;
+  font-size: x-large;
+}

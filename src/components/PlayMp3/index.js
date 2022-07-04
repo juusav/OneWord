@@ -1,4 +1,6 @@
 import React from "react";
+import { HiSpeakerphone } from "react-icons/hi";
+import "./styles.css";
 
 function PlayMp3(props) {
   const playAudio = () => {
@@ -8,7 +10,12 @@ function PlayMp3(props) {
 
   return (
     <div>
-      <button onClick={playAudio}>playMp3</button>
+      <button onClick={playAudio} className="button">
+        <HiSpeakerphone color="white" />
+        <p className="pronounce">
+          Pronounce <span className="word">{props.word}</span>
+        </p>
+      </button>
     </div>
   );
 }
