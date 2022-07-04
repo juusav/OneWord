@@ -8,7 +8,7 @@ function PlayMp3(props) {
 
   return (
     <div>
-      <button onClick={playAudio()}>playMp3</button>
+      <button onClick={playAudio}>playMp3</button>
     </div>
   );
 }
