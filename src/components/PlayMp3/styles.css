@@ -2,12 +2,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 0px 30px;
+  padding: 5px 15px;
 
   background: rgb(69, 67, 67);
   color: aliceblue;
   border-radius: 10px;
-  font-size:large;
+  font-size:x-large;
 }
 .word {
   color: white;
