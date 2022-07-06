@@ -2,22 +2,28 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 5px 15px;
+  overflow: hidden;
 
   background: rgb(69, 67, 67);
   color: aliceblue;
-  border-radius: 10px;
-  font-size:x-large;
+  border-radius: 5px;
+  font-size: x-large;
+  filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.438));
+}
+.icon {
+  background: rgb(28, 28, 28);
+  height: 45px;
+  width: 45px;
+  padding: 0px 10px;
+}
+.primary_color{
+  color: white;
 }
 .word {
-  color: white;
   font-weight: bold;
   text-transform: lowercase;
 }
-.word::first-letter {
-  text-transform: uppercase;
-}
 .pronounce::first-letter {
-  color: white;
   font-size: x-large;
+  font-weight: 200;
 }

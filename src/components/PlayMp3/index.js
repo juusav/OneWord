@@ -11,9 +11,9 @@ function PlayMp3(props) {
   return (
     <div>
       <button onClick={playAudio} className="button">
-        <HiSpeakerphone color="white" />
-        <p className="pronounce">
-          Pronounce <span className="word">{props.word}</span>
+        <HiSpeakerphone color="white" className="icon" />
+        <p className="pronounce primary_color">
+          Pronounce <span className="word primary_color">{props.word}</span>
         </p>
       </button>
     </div>
