@@ -4,6 +4,7 @@
   font-size: large;
   letter-spacing: 1px;
   border-radius: 10px;
+  font-weight: 600;
   background: rgba(128, 128, 128, 0.547);
 }
 
@@ -11,4 +12,12 @@
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(219, 216, 216);
   opacity: 1; /* Firefox */
+  font-weight: 600;
+}
+
+.myH1 {
+  margin: 30px 5px;
+}
+.myWord {
+  font-weight: 600;
 }
