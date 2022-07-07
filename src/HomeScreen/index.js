@@ -40,7 +40,7 @@ function HomeScreen() {
   const { data } = searchWord;
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <h1 className="underline decoration-pink-500 text-7xl font-bold myH1">OneWord</h1>
         <input
