@@ -42,7 +42,9 @@ function HomeScreen() {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <h1 className="underline decoration-pink-500 text-7xl font-bold myH1">OneWord</h1>
+        <h1 className="underline decoration-pink-500 text-7xl font-bold myH1">
+          OneWord
+        </h1>
         <input
           type="text"
           placeholder="Search"
@@ -53,15 +55,26 @@ function HomeScreen() {
         />
       </form>
 
-      <p class="underline decoration-red-500/30">{searchWord.error ? searchWord.error : ""}</p>
-      {data 
-      ? (
+      <p className="underline decoration-red-500/30">
+        {searchWord.error ? searchWord.error : ""}
+      </p>
+      {data ? (
         <>
           <h2 className="myWord">{data.word ? data.word : ""}</h2>
         </>
       ) : (
         ""
       )}
+
+      <div>
+        {searchWord.data.meanings ? (
+          <>
+            <span>{searchWord.data?.meanings[0].partOfSpeech}</span>
+          </>
+        ) : (
+          ""
+        )}
+      </div>
       <div>
         {searchWord.data.phonetics ? (
           <PlayMp3
